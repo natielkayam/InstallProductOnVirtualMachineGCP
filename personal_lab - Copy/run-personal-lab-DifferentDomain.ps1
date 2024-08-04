@@ -44,14 +44,14 @@ $utilsFolder = "$PSScriptRoot\utils" | Resolve-Path
 $STSRepoName = 'ncr-swt-retail/emerald1'
 $CCMRepoName = 'ncr-swt-retail/emerald1-ccm'
 
-$githubDataUrl = 'https://github-data-yqog19b.nw.gateway.dev/api/v1/latest'
+$githubDataUrl = 'XXXXXX'
 # Get Google ID token from logged-in user at this computer
 $googleIdToken = & 'gcloud.cmd' auth print-identity-token 
 
 $headers = @{
     Authorization = "Bearer $googleIdToken"
     Accept = '*/*'
-    Host = 'github-data-yqog19b.nw.gateway.dev'
+    Host = 'XXXXXX'
 } 
 
 $res = Invoke-WebRequest -Uri "$githubDataUrl/$BranchName/CCM-GPosWebServer/1" -Method Get -Headers $headers
@@ -112,8 +112,8 @@ $parameters = @{
     GlobalConfigurationFile     = $GlobalConfigurationFile
     GithubUsername              = $GitHubUser
     GithubPAT                   = $GitHubUserPersonalAccessToken
-    RemotePowershellUsername    = 'rwn\s_raa_tfsbuild04'
-    RemotePowershellPassword    = 'ALal1234!@'
+    RemotePowershellUsername    = 'XXXXXX'
+    RemotePowershellPassword    = 'XXXXX'
     CCMGposReleaseName          = $CCMGposReleaseName
     CCMOfficeReleaseName        = $CCMOfficeReleaseName
     GPosWebServerReleaseName    = $GPosWebServerReleaseName
